@@ -17,16 +17,14 @@
 \usepackage{cleveref}
 \usepackage{xparse}
 \usepackage[textsize=footnotesize]{todonotes}
-%
-\usepackage{tikz}
-\usetikzlibrary{matrix,arrows,calc,cd}
-%
-\usepackage{package}
+\usepackage{subfigure}
+\usepackage{float}
 %
 %
-\title{Wall and chamber structure for quiver moduli}
+%
+\title{Sensor Fusion Midterm Project}
 \author{Hans Franzen}
-\date{\today}
+\date{}
 %
 %
 % ----------------------------------------------------------------------------------------------------
@@ -36,133 +34,96 @@
 
 	\maketitle
 	
-	\section{Introduction}
+	The following images show several cars in the point cloud images. 
+	\begin{figure}[H]
+		\centering
+		\subfigure[Frame 4]{%
+		\includegraphics[scale=0.4]{../images_output/Seq1_Frame4.png}}
+		\label{S1F4}
+		\quad
+		\subfigure[Frame 25]{%
+		\includegraphics[scale=0.4]{../images_output/Seq1_Frame25.png}}
+		\label{S1F25}
+		\quad
+		\subfigure[Frame 41]{%
+		\includegraphics[scale=0.4]{../images_output/Seq1_Frame41.png}}
+		\label{S1F41}
+		\\
+		\subfigure[Frame 60]{%
+		\includegraphics[scale=0.4]{../images_output/Seq1_Frame60.png}}
+		\label{S1F60}
+		\quad
+		\subfigure[Frame 70]{%
+		\includegraphics[scale=0.4]{../images_output/Seq1_Frame70.png}}
+		\label{S1F70}
+		\quad
+		\subfigure[Frame 83]{%
+		\includegraphics[scale=0.4]{../images_output/Seq1_Frame83.png}}
+		\label{S1F83}
+		\\
+		\subfigure[Frame 91]{%
+		\includegraphics[scale=0.4]{../images_output/Seq1_Frame91.png}}
+		\label{S1F91}
+		\quad
+		\subfigure[Sequence 1, Frame 124]{%
+		\includegraphics[scale=0.4]{../images_output/Seq1_Frame124.png}}
+		\label{S1F124}
+		%
+		\caption{Sequence 1}
+		\label{S1}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\subfigure[Frame 3]{%
+		\includegraphics[scale=0.4]{../images_output/Seq2_Frame3.png}}
+		\label{S2F3}
+		\quad
+		\subfigure[Frame 77]{%
+		\includegraphics[scale=0.4]{../images_output/Seq2_Frame77.png}}
+		\label{S2F77}
+		\quad
+		\subfigure[Frame 135]{%
+		\includegraphics[scale=0.4]{../images_output/Seq2_Frame135.png}}
+		\label{S2F135}
+		%
+		\caption{Sequence 2}
+		\label{S2}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\subfigure[Frame 2]{%
+		\includegraphics[scale=0.4]{../images_output/Seq3_Frame2.png}}
+		\label{S3F2}
+		\quad
+		\subfigure[Frame 31]{%
+		\includegraphics[scale=0.4]{../images_output/Seq3_Frame31.png}}
+		\label{S3F31}
+		\quad
+		\subfigure[Frame 71]{%
+		\includegraphics[scale=0.4]{../images_output/Seq3_Frame71.png}}
+		\label{S3F71}
+		\\
+		\subfigure[Frame 108]{%
+		\includegraphics[scale=0.4]{../images_output/Seq3_Frame108.png}}
+		\label{S3F108}
+		\quad
+		%
+		\caption{Sequence 3}
+		\label{S3}
+	\end{figure}
 
-	Blah.
-	
-	\section{Setup}
-	
-	We work over the complex numbers throughout. A vector space is understood to be a complex vector space, a variety is a complex variety, and so on.
-	
-	Let $Q$ be a quiver and let $\mathbf{d} \in \smash{\N_0^{Q_0}}$ be a dimension vector for $Q$. Fix vector spaces $V_i$ of dimension $d_i$ and let $\repspace{\mathbf{d}} = \repspace{\mathbf{d}}[Q] = \bigoplus_{a \in Q_1} \Hom(V_{s(a)},V_{t(a)})$. It is the space of all representations of $Q$ on the fixed vector spaces $V_i$. We consider the algebraic group $\group{\mathbf{d}} = \prod_{i \in Q_0} \GL(V_i)$. We have a linear left action on $\repspace{\mathbf{d}}$ by letting $g = (g_i) \in \group{\mathbf{d}}$ act on $M = (M_a) \in \repspace{\mathbf{d}}$ by
-	\[
-		g\cdot M = (g_{t(a)}M_ag_{s(a)}^{-1}).
-	\]
-	The central closes subgroup $\Delta = \{z\cdot\id \mid z \in \C^\times\}$ acts trivially. Therefore, the action descends to an action of $\pgroup{\mathbf{d}} = \group{\mathbf{d}}/\Delta$. Note that two points $M, N \in \repspace{\mathbf{d}}$ are isomorphic as representations if and only if they lie in the same orbit under the above action.
-	
-	An element $\theta \in \Q^{Q_0}$ such that $\theta\cdot \mathbf{d} = 0$ is called a \emph{stability parameter} for $\mathbf{d}$. Let $S_\mathbf{d} = \{\theta \in \Q^{Q_0} \mid \theta\cdot \mathbf{d} = 0\}$ be the space of stability parameters. Via the dot product, we regard $\theta$ as a linear functional on $\Q^{Q_0}$ and write $\theta(x) = \theta\cdot x$ for $x \in \Q^{Q_0}$ and $\theta(M) = \theta(\dimvect(M))$ for a representation $M$ of $Q$. We define semistability of a representation of $Q$ of dimension vector $\mathbf{d}$ as follows.
-	
-	\begin{defn*}
-		A representation $M$ of dimension vector $\mathbf{d}$ is called $\theta$-\emph{semistable} if $\theta(M') \leq 0$ for all subrepresentations $M'$ of $M$.
-	\end{defn*}
+	Examples of features which are visible in almost all images are:
+	\begin{itemize}
+		\item Tyres
+		\item Roof
+		\item Rear bumper (for cars in front)
+		\item C-pillar (for cars in front)
+		\item Hood (for cars behind)
+		\item Windscreen (for cars behind)
+		\item Front bumper (for cars behind)
+		\item A-pillar (for cars behind)
+	\end{itemize}
 
-	The set $\repspace[\semistable{\theta}]{\mathbf{d}}$ of $\theta$-semistable representations is a Zariski open, possibly empty, subset of $R$. An integral stability parameter $\theta$ defines a character $\chi_\theta$ of the group $\pgroup{\mathbf{d}}$ by $\chi_\theta(g) = \prod_{i \in Q_0} \det(g_i)^{-\theta_i}$. A character provides a linearization of the trivial line bundle on $\repspace{\mathbf{d}}$; call this linearized line bundle $L(\chi_\theta)$. Then, semistability with respect to this (ample) linearized line bundle is, according to King \todo{Ref.}, the same as the notion of semistability from above.
-	
-	Given $\theta \in \Q^{Q_0}$, we will say a dimension vector $\mathbf{d} \in \N_0^{Q_0}$ is $\theta$-\emph{semistable} if $\theta(\mathbf{d}) = 0$ and if $\repspace[\semistable{\theta}]{\mathbf{d}} \neq \emptyset$. Semistability of a dimension vector can be characterized combinatorially by its generic subdimension vectors. Let us detail. Let $\mathbf{e}$ be a dimension vector with $e_i \leq d_i$ for every $i \in Q_0$. We write $\mathbf{e} \leq \mathbf{d}$ and call $\mathbf{e}$ a \emph{subdimension vector} of $\mathbf{d}$. We say, following Schofield \todo{Ref.}, that a property holds for a \emph{general representation} of dimension vector $\mathbf{d}$ if there exists a non-empty Zariski open subset of $\repspace{\mathbf{d}}$ such that the property holds for all members of this open subset.
-	
-	\begin{defn*}
-		A subdimension vector $\mathbf{e}$ of $\mathbf{d}$ is called a \emph{generic subdimension vector} if a general representation of dimension vector $\mathbf{d}$ possesses a subrepresentation of dimension vector $\mathbf{e}$.
-	\end{defn*}
-	
-	The following characterization of generic subdimension vectors is due to Schofield. It uses the notation
-	\[
-		\operatorname{ext}(\mathbf{d},\mathbf{e}) = \min\{ \dim \Ext(M,N) \mid M \in \repspace{\mathbf{d}} \text{ and } N \in \repspace{\mathbf{e}}\},
-	\]
-	which is called the \emph{generic Ext}. This is because the value $\operatorname{ext}(\mathbf{d},\mathbf{e})$ is attained for generic representations $M$ and $N$ of dimension vectors $\mathbf{d}$ and $\mathbf{e}$.
-	
-	\begin{thm}
-		For a subdimension vector $\mathbf{e}$ of $\mathbf{d}$, the following are equivalent:
-		\begin{enumerate}
-			\item $\mathbf{e}$ is a generic subdimension vector of $\mathbf{d}$.
-			\item $\operatorname{ext}(\mathbf{e},\mathbf{d}-\mathbf{e}) = 0$.
-			\item $\langle \mathbf{f},\mathbf{d}-\mathbf{e} \rangle \geq 0$ for all generic subdimension vectors $\mathbf{f}$ of $\mathbf{e}$.
-		\end{enumerate}
-	\end{thm}
-
-	The last item gives a recursive way to determine all generic subdimension vectors. Now to the characterization of semistability (see \todo{Ref.}).
-	
-	\begin{thm} \label{t:semistable_generic}
-		Let $\theta$ be a stability parameter for $\mathbf{d}$. Then $\mathbf{d}$ is $\theta$-semistable if and only if $\theta(\mathbf{e}) \leq 0$ for all generic subdimension vectors $\mathbf{e}$ of $\mathbf{d}$.
-	\end{thm}
-	
-	Using this criterion, we prove the following lemma which we will use in the next section.
-	
-	\begin{lem} \label{l:semistable_on_ray}
-		Let $\mathbf{d}$ and $\mathbf{d}'$ be two non-zero dimension vectors which are $\Q$-linearly dependent. Let $\theta$ be a stability parameter for both. Then $\mathbf{d}$ is $\theta$-semistable if and only if $\mathbf{d}'$ is.
-	\end{lem}
-
-	\begin{proof}
-		It is evidently enough to show the claim for $\mathbf{d}' = n\mathbf{d}$, where $n$ is a positive integer. As direct sums of $\theta$-semistable representations are $\theta$-semistable, $\theta$-semistability of $\mathbf{d}$ implies $\theta$-semistability of $n\mathbf{d}$. 
-		
-		Now to the converse implication. We use \Cref{t:semistable_generic} to show $\theta$-semistability of $n\mathbf{d}$ implies that $\mathbf{d}$ is $\theta$-semistable. Let $\mathbf{e}$ be a generic subdimension vector of $\mathbf{d}$. Let us first argue that $n\mathbf{e}$ is a generic subdimension vector of $n\mathbf{d}$. Let $M'$ and $M''$ be general representations of dimension vectors $\mathbf{e}$ and $\mathbf{d}-\mathbf{e}$, respectively. Then
-		\[
-			\Ext({M'}^{n},{M''}^n) = 0,
-		\]
-		so also $\operatorname{ext}(n\mathbf{e},n(\mathbf{d}-\mathbf{e})) = 0$ because the smallest possible value is already attained. Now, as $n\mathbf{d}$ is $\theta$-semistable by assumption, we get $0 \geq \theta(n\mathbf{e}) = n\theta(e)$ by \Cref{t:semistable_generic}. As $n > 0$, this implies $\theta(\mathbf{e}) \leq 0$ which, again using \Cref{t:semistable_generic}, yields $\theta$-semistability of $\mathbf{d}$.
-	\end{proof}
-
-	
-	\section{Walls}
-	
-	\todo[inline]{Some words about walls.}
-	
-	\begin{defn*}
-		Two stability parameters $\theta, \eta$ are called \emph{GIT equivalent} if $\repspace[\semistable{\theta}]{\mathbf{d}} = \repspace[\semistable{\eta}]{\mathbf{d}}$.
-	\end{defn*}
-
-	It was shown by Thaddeus \todo{Ref.} that GIT equivalence gives a wall and chamber decomposition of the space $S_\mathbf{d}$ of stability parameters; each GIT equivalence class is the complement of a union of hyperplanes inside a subspace of $S_\mathbf{d}$. The goal of this section is to determine this wall and chamber decomposition explicitly (and in fact algorithmically).
-	
-	Let $\theta, \eta \in S_\mathbf{d}$. If $\theta$ and $\eta$ are not GIT equivalent then there must exist a subdimension vector $\mathbf{e}$ such that $\theta(\mathbf{e}) \leq 0$ and $\eta(\mathbf{e}) > 0$, or vice versa. Each subdimension vector $\mathbf{e}$ defines a subspace $H_\mathbf{e} = \{ \theta \in S_\mathbf{d} \mid \theta(\mathbf{e}) = 0\}$ and if $\mathbf{d}$ and $\mathbf{e}$ are linearly independent over $\Q$, then $H_{\mathbf{e}}$ has codimension one inside $S_{\mathbf{d}}$. Every GIT wall must therefore be a hyperplane of the form $H_\mathbf{e}$ for some subdimension vector $\mathbf{e}$, but conversely a hyperplane $H_\mathbf{e}$ need not be a GIT wall as the following example shows. 
-	
-	\begin{ex}
-		Consider the quiver with 4 vertices $0,1,2,\infty$ which looks as follows:
-		\[
-			\begin{tikzcd}
-				0 \arrow[r]& 1 \arrow[r] \arrow[r, bend right=30] \arrow[r, bend left=30] & 2 \arrow[r] & \infty
-			\end{tikzcd}
-		\]
-		Let $\mathbf{d} = (1,2,3,1)$ and let $\mathbf{e} = (1,0,0,1)$. It was shown in \todo{Ref.} that two generic stability parameters on either side of the hyperplane $H_\mathbf{e}$ are GIT equivalent and therefore $H_\mathbf{e}$ is not a GIT wall.
-	\end{ex}
-	
-	Hyperplanes $H_\mathbf{e}$ which are not GIT walls will be called irrelevant. The formal definition is as follows.
-	
-	\begin{defn*}
-		Let $\mathbf{e}$ be a subdimension vector of $\mathbf{d}$ such that $\mathbf{e} \notin \Q\cdot \mathbf{d}$. The hyperplane $H_\mathbf{e}$ is called \emph{irrelevant} if for a generic $\eta \in H_\mathbf{e}$, there exists $\epsilon > 0$ such that $\theta$ and $\eta$ are GIT equivalent for all $\theta \in S_\mathbf{d}$ with $\left\|\theta - \eta\right\| < \epsilon$. 
-	\end{defn*}
-	
-	In the above definition, generic means avoiding finitely many proper linear subspaces and $\left\|-\right\|$ is the 2-norm on $S_\mathbf{d}$.
-	
-	Let us now state the main result of this section, the characterization of relevant GIT walls.
-	
-	\begin{thm}
-		Let $\mathbf{e}$ be a subdimension vector of $\mathbf{d}$ such that $\mathbf{e} \notin \Q\cdot \mathbf{d}$. The following are equivalent:
-		\begin{enumerate}
-			\item\label{wall} The hyperplane $H_\mathbf{e}$ is a GIT wall.
-			\item\label{all} For all $\eta \in H_\mathbf{e}$ holds $\repspace[\semistable{\eta}]{\mathbf{e}} \neq \emptyset$ and $\repspace[\semistable{\eta}]{\mathbf{d}-\mathbf{e}} \neq \emptyset$.
-			\item\label{generic} For a generic $\eta \in H_\mathbf{e}$ holds $\repspace[\semistable{\eta}]{\mathbf{e}} \neq \emptyset$ and $\repspace[\semistable{\eta}]{\mathbf{d}-\mathbf{e}} \neq \emptyset$.
-		\end{enumerate}
-	\end{thm}
-
-	Note that $\eta \in H_\mathbf{e}$ is a stability parameter for both $\mathbf{e}$ and $\mathbf{d}-\mathbf{e}$. In the proof, we use the following notations:
-	\begin{align*}
-		B_0(\theta) &= \{ \mathbf{f} \in \N_0^{Q_0} \mid \mathbf{e} \leq \mathbf{d} \text{ and } \theta(\mathbf{f}) = 0 \} \\
-		B_\pm(\theta) &= \{ \mathbf{f} \in \N_0^{Q_0} \mid \mathbf{e} \leq \mathbf{d} \text{ and } \pm\theta(\mathbf{f}) > 0 \}.
-	\end{align*}
-		
-	\begin{proof}		
-		We prove (\ref{wall}) implies (\ref{all}). Let $H_\mathbf{e}$ be a GIT wall and assume that (\ref{all}) is violated. Without loss of generality, suppose that $\repspace[\semistable{\eta}]{\mathbf{e}} = \emptyset$ for some $\eta \in H_\mathbf{e}$, for the other case is entirely analogous. If we choose $\epsilon > 0$ small enough then
-		\begin{align*}
-			B_0(\theta) &\sub B_0(\eta) \\
-			B_{+}(\theta) &\supseteq B_{+}(\eta)
-		\end{align*}
-		holds for all $\theta \in S_d$ with $\left\|\theta-\eta\right\| < \epsilon$.
-		Therefore $\repspace[\semistable{\theta}]{\mathbf{d}} \sub \repspace[\semistable{\eta}]{\mathbf{d}}$. Let us prove the other inclusion. Let $M \in \repspace[\semistable{\eta}]{\mathbf{d}}$ and show that $M$ is $\theta$-semistable. Let $\mathbf{f}$ be a subdimension vector of $\mathbf{d}$ with $\theta(\mathbf{f}) > 0$. Then either $\eta(\mathbf{f}) > 0$ or $\mathbf{f} \in \Q\cdot \mathbf{e}$. In the former case, $M$ has no subrepresentation of dimension vector $\mathbf{f}$. Suppose we are in the latter case, i.e.~$\mathbf{f}$ and $\mathbf{e}$ are $\Q$-linearly dependent. Assume that $M$ has a subrepresentation $N$ of dimension vector $\mathbf{f}$. We show that $N$ must be $\eta$-semistable, which yields a contradiction to \Cref{l:semistable_on_ray}. Let $\mathbf{f}'$ be a subdimension vector of $\mathbf{f}$ with $\eta(\mathbf{f}') > 0$. Then $\mathbf{f}' \in B_+(\theta)$. If $N$ had a subrepresentation $N'$ of dimension vector $\mathbf{f}'$, then $N'$ would be a subrepresentation of $M$, thus contradicting $\theta$-semistability of $M$. This proves that $N$ is $\eta$-semistable. We have asserted $\repspace[\semistable{\theta}]{\mathbf{d}} = \repspace[\semistable{\eta}]{\mathbf{d}}$ for all $\theta$ in the $\epsilon$-ball inside $S_\mathbf{d}$ around $\eta$. This means $H_\mathbf{e}$ is irrelevant, contradicting (\ref{wall}).
-		
-		The implication from (\ref{all}) to (\ref{generic}) is obvious.
-		
-		Finally, we show (\ref{generic}) implies (\ref{wall}). Suppose that $H_\mathbf{e}$ is irrelevant and show that (\ref{generic}) is violated. Let $\eta \in H_\mathbf{e}$ be generic and choose $\epsilon > 0$ as in the definition of irrelevance. Choose $\theta \in S_\mathbf{d}\setminus H_\mathbf{e}$ such that $\left\|\theta-\eta\right\| < \epsilon$. 
-		As $\theta(\mathbf{e}) \neq 0$, we may assume $\theta(\mathbf{e}) > 0$ without loss of generality (the argument in the negative case is analogous). Suppose that $\repspace[\semistable{\eta}]{\mathbf{e}} \neq \emptyset$ and $\repspace[\semistable{\eta}]{\mathbf{d}-\mathbf{e}} \neq \emptyset$. Take $M' \in \repspace[\semistable{\eta}]{\mathbf{e}}$ and $M'' \in \repspace[\semistable{\eta}]{\mathbf{d}-\mathbf{e}}$. Then $M = M' \oplus M''$ is $\eta$-semistable but not $\theta$-semistable as $M'$ is a subrepresentation with $\theta(M') > 0$. This contradicts the irrelevance of $H_\mathbf{e}$.
-	\end{proof}
 
 
 \end{document}

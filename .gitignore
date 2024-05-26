@@ -1,3 +1,6 @@
 .DS_Store
 student/.DS_Store
 student/__pycache__/
+*.aux
+*.log
+*.out
